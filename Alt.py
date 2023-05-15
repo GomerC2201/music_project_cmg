@@ -6,10 +6,6 @@ from wordcloud import WordCloud
 import plotly.express as px
 import plotly.graph_objects as go
 import itertools
-import streamlit.components.v1 as components
-from datetime import datetime
-from plotly.subplots import make_subplots
-import numpy as np
 import calendar
 
 def create_3d_plot_3(data):  # Changed df to data

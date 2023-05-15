@@ -101,7 +101,7 @@ def update_radial_chart(day, year, month):
 def load_data():
     """Load and preprocess the data. We cache this function so that Streamlit
     doesn't reload the data every time it reruns the script."""
-    data = pd.read_csv('/Users/camerongomez/Desktop/MusicProject/all_tracks_utf8_done.csv')
+    data = pd.read_csv('all_tracks_utf8_done.csv')
     data['DateTime'] = pd.to_datetime(data['DateTime'], format="%d/%m/%Y %H:%M")
     return data
 

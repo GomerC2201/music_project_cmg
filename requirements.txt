@@ -4,10 +4,8 @@ matplotlib
 plotly
 wordcloud
 plotly.express
-plotly.graph_objects
 itertools
 sklearn.preprocessing
 datetime
-plotly.subplots
 numpy
 calendar

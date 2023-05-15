@@ -3,7 +3,6 @@ pandas
 matplotlib
 plotly
 wordcloud
-plotly.express
 itertools
 sklearn.preprocessing
 datetime

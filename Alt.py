@@ -225,7 +225,7 @@ elif app_mode == "Scrobbles Over Time":
 elif app_mode == "3D Line Plot":
     add_bg_from_url(
     f"""
-    # Listens Over Time - 3D Line Plot
+    \n# Listens Over Time - 3D Line Plot
     \n Each line represents a year with each point representing one month's listening total.
     """)
     # Create the 3D line plot
@@ -237,7 +237,7 @@ elif app_mode == "3D Line Plot":
 elif app_mode == "Heatmap and Radial Bar":
     add_bg_from_url(
     f"""
-    # When do I listen to music?
+    \n# When do I listen to music?
     \n## A Heatmap and Radial Bar Chart
     """)
     # Extract hour, day of the week, month, and year
@@ -267,7 +267,7 @@ elif app_mode == "Heatmap and Radial Bar":
         x=filtered_daily_counts['Hour'],
         y=filtered_daily_counts['Date'],
         z=filtered_daily_counts['Count'],
-        colorscale='Blues',
+        colorscale='Reds',
         hovertemplate=(
             "Day: %{y|%B %d, %Y}<br>"
             "Hour: %{x}<br>"

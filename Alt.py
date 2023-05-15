@@ -408,7 +408,10 @@ elif app_mode == "Bar Chart Race":
     # Iterate through each period and create a frame
     for year_month in new_df['Year_Month'].unique():
         df_period = new_df[new_df['Year_Month'] == year_month]
-
+        
+        # convert string to datetime and then format it
+        formatted_date = datetime.strptime(year_month, '%Y-%m').strftime('%B, %Y')
+        
     # Assign the color to each artist for this frame
         df_period = df_period.copy()
         df_period['color'] = df_period['Artist'].apply(lambda artist: artist_colors[artist])
@@ -428,7 +431,7 @@ elif app_mode == "Bar Chart Race":
                 )
             ],
             layout=go.Layout(
-                title_text=f'Song Count by Artist: {year_month.strftime("%B, %Y")}',
+                title_text=f'Song Count by Artist: {formatted_date}',
                 xaxis_title="Cumulative Song Count",
                 yaxis_title="Artist",
                 plot_bgcolor='rgb(211, 211, 211)',  # Make chart's background grey
@@ -439,7 +442,7 @@ elif app_mode == "Bar Chart Race":
                 bargroupgap=0.1,
                 yaxis={'categoryorder': 'total ascending'},
             ),
-            name=year_month.strftime("%B, %Y"),
+            name=year_month,
         )
 
         frames.append(frame)

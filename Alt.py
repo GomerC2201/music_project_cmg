@@ -448,12 +448,12 @@ elif app_mode == "Bar Chart Race":
         frames.append(frame)
 
         slider_step = {"args": [
-            [year_month.strftime("%B, %Y")],
+            [formatted_date],
             {"frame": {"duration": animation_duration, "redraw": True},
             "mode": "immediate",
             "transition": {"duration": animation_duration}}
             ],
-            "label": year_month.strftime("%B, %Y"),
+            "label": formatted_date,
             "method": "animate",
         }
         slider_dict["steps"].append(slider_step)

@@ -4,3 +4,4 @@ matplotlib
 plotly
 wordcloud
 datetime
+sklearn

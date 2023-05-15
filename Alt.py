@@ -365,6 +365,7 @@ elif app_mode == "Bar Chart Race":
     merged_data = all_combinations.merge(year_month_counts, on=['Artist', 'Year_Month'], how='left')
     merged_data['Count'].fillna(0, inplace=True)
     merged_data['Running_Total'] = merged_data.groupby('Artist')['Count'].cumsum()
+    merged_data.loc[:, 'Year_Month'] = merged_data['Year_Month'].astype(str)
 
     index = pd.MultiIndex.from_product([top_artists, year_month_range], names=['Artist', 'Year_Month'])
     new_df = pd.DataFrame(index=index).reset_index()

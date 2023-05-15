@@ -457,7 +457,7 @@ elif app_mode == "Bar Chart Race":
                 plot_bgcolor='rgb(211, 211, 211)',  # Make chart's background grey
                 showlegend=False,
                 height=600,
-                width=800,
+                width=820,
                 bargap=0.15,
                 bargroupgap=0.1,
                 yaxis={'categoryorder': 'total ascending'},
@@ -485,7 +485,7 @@ elif app_mode == "Bar Chart Race":
         yaxis_title="Artist",
         showlegend=False,
         height=600,
-        width=800,
+        width=820,
         bargap=0.15,
         bargroupgap=0.1,
         plot_bgcolor='rgb(211, 211, 211)',  # Make chart's background grey

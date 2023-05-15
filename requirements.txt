@@ -3,7 +3,6 @@ pandas
 matplotlib
 plotly
 wordcloud
-PIL
 plotly.express
 plotly.graph_objects
 itertools

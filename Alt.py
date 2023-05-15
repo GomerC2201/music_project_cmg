@@ -375,7 +375,7 @@ elif app_mode == "Bar Chart Race":
 
     animation_duration = 250
     frames = []
-    new_df['Year_Month'] = pd.to_datetime(new_df['Year_Month']).dt.to_period('M')
+    #new_df['Year_Month'] = pd.to_datetime(new_df['Year_Month']).dt.to_period('M')
     new_df = new_df.sort_values(['Year_Month', 'Running_Total'], ascending=[True, False])
     new_df = new_df.groupby('Year_Month').head(10)
 
@@ -408,6 +408,7 @@ elif app_mode == "Bar Chart Race":
         df_period = new_df[new_df['Year_Month'] == year_month]
 
     # Assign the color to each artist for this frame
+        df_period = df_period.copy()
         df_period['color'] = df_period['Artist'].apply(lambda artist: artist_colors[artist])
 
     # Convert the DataFrame to a bar chart

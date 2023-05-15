@@ -1,10 +1,8 @@
 streamlit
 pandas
+numpy
 matplotlib
 plotly
 wordcloud
-itertools
-sklearn.preprocessing
 datetime
-numpy
 calendar

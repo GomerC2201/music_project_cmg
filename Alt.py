@@ -3,11 +3,9 @@ import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
-from PIL import Image
 import plotly.express as px
 import plotly.graph_objects as go
 import itertools
-from sklearn.preprocessing import MinMaxScaler
 import streamlit.components.v1 as components
 from datetime import datetime
 from plotly.subplots import make_subplots

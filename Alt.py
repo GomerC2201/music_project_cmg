@@ -126,7 +126,27 @@ def add_bg_from_url(markdown_text):
         """,
         unsafe_allow_html=True
     )
-
+def add_bg_from_url_2(markdown_text):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("https://images.unsplash.com/photo-1587731556938-38755b4803a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2678&q=80");
+            background-attachment: fixed;
+            background-size: cover
+        }}
+        .element-container {{
+            background-color: rgba(0, 23, 43, 0.95);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 110%;
+        }}
+        </style>
+        {markdown_text}
+        """,
+        unsafe_allow_html=True
+    )
 # Create a tab layout
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox("Choose the page:", ["About","Top Artists, Albums, Tracks", "Scrobbles Over Time", "3D Line Plot", "Heatmap and Radial Bar", "WordCloud", "Bar Chart Race", "Scatter Plot"])
@@ -341,7 +361,7 @@ elif app_mode == "WordCloud":
         st.write("Please select at least one year.")
 
 elif app_mode == "Bar Chart Race":
-    add_bg_from_url(
+    add_bg_from_url_2(
     f"""
     # Total Listens - Bar Chart Race
     """)

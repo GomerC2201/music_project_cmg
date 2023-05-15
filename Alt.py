@@ -426,7 +426,7 @@ elif app_mode == "Bar Chart Race":
     }
 
     # Iterate through each period and create a frame
-    for year_month in new_df['Year_Month'].unique():
+    for year_month in sorted(new_df['Year_Month'].unique()):
         df_period = new_df[new_df['Year_Month'] == year_month]
         
         # convert string to datetime and then format it
@@ -462,7 +462,7 @@ elif app_mode == "Bar Chart Race":
                 bargroupgap=0.1,
                 yaxis={'categoryorder': 'total ascending'},
             ),
-            name=year_month,
+            name=formatted_date,
         )
 
         frames.append(frame)

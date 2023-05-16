@@ -5,3 +5,4 @@ plotly
 wordcloud
 datetime
 streamlit
+streamlit-extras

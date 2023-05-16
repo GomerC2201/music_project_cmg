@@ -150,7 +150,7 @@ def add_bg_from_url_2(markdown_text):
         unsafe_allow_html=True
     )
 
-photo_credit = https://unsplash.com/photos/fEVaiLwWvlU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+photo_credit = "https://unsplash.com/photos/fEVaiLwWvlU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
 # Create a multipage layout without having directory files
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox("Choose the page:", ["About","Top Artists, Albums, Tracks", "Scrobbles Over Time", "3D Line Plot", "Heatmap and Radial Bar", "WordCloud", "Bar Chart Race", "Scatter Plot"])

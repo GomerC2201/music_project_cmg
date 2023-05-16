@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import itertools
 import calendar
 from datetime import datetime
+from streamlit_extras.switch_page_button import switch_page
 
 def create_3d_plot_3(data):  # Changed df to data
     # Convert the DateTime column to a datetime object
@@ -96,7 +97,7 @@ def update_radial_chart(day, year, month):
 
 @st.cache_data
 def load_data():
-    """Load and preprocess the data. We cache this function so that Streamlit
+    """Load and preprocess the data. Cache this function so that Streamlit
     doesn't reload the data every time it reruns the script."""
     data = pd.read_csv('all_tracks_utf8_done.csv')
     data['DateTime'] = pd.to_datetime(data['DateTime'], format="%d/%m/%Y %H:%M")
@@ -105,6 +106,7 @@ def load_data():
 # Load the data
 data = load_data()
 
+# Add background image and background color/container for text and charts
 def add_bg_from_url(markdown_text):
     st.markdown(
         f"""
@@ -126,6 +128,7 @@ def add_bg_from_url(markdown_text):
         """,
         unsafe_allow_html=True
     )
+# Same as above, but this one has more width to accomodate the bar chart race (easy fix)
 def add_bg_from_url_2(markdown_text):
     st.markdown(
         f"""
@@ -147,7 +150,8 @@ def add_bg_from_url_2(markdown_text):
         """,
         unsafe_allow_html=True
     )
-# Create a tab layout
+    
+# Create a multipage layout without having directory files
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox("Choose the page:", ["About","Top Artists, Albums, Tracks", "Scrobbles Over Time", "3D Line Plot", "Heatmap and Radial Bar", "WordCloud", "Bar Chart Race", "Scatter Plot"])
 if app_mode == "About":
@@ -166,8 +170,13 @@ if app_mode == "About":
         " exploring my top artists, albums, or how my music preferences have changed over"
         " the years, this project invites you on a data-driven exploration of my life in music."
         " It's a unique, personal view into the soundtrack of my life, expressed through the prism of data analysis."
+        
+        "\n### Page Index"
     )
-
+    if st.button("Go to Top Artists, Albums, Tracks"):
+        switch_page("Top Artists, Albums, Tracks")
+    if st.button("Go to Scrobbles Over Time"):
+        switch_page("Scrobbles Over Time")
 if app_mode == "Top Artists, Albums, Tracks":
     add_bg_from_url(
     f"""

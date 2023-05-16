@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 import itertools
 import calendar
 from datetime import datetime
-from streamlit_extras.switch_page_button import switch_page
 
 def create_3d_plot_3(data):  # Changed df to data
     # Convert the DateTime column to a datetime object
@@ -150,33 +149,47 @@ def add_bg_from_url_2(markdown_text):
         """,
         unsafe_allow_html=True
     )
-    
+
+photo_credit = https://unsplash.com/photos/fEVaiLwWvlU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
 # Create a multipage layout without having directory files
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox("Choose the page:", ["About","Top Artists, Albums, Tracks", "Scrobbles Over Time", "3D Line Plot", "Heatmap and Radial Bar", "WordCloud", "Bar Chart Race", "Scatter Plot"])
 if app_mode == "About":
     add_bg_from_url(
-        "\n# An Aural History - Cameron's Life in Music"
-        "\nWelcome to my personal exploration of music through the lens of data. This"
-        " project is a testament to my passion for music and data analysis, combining"
-        " my personal music listening data from Last.fm with Python-based data analysis"
-        " and visualizations. You can find my music profile here: https://www.last.fm/user/cgomez08."
-
-        "\n### Project Overview"
-        "\nSpanning 15 years of listening history from May 26, 2008 to May 3, 2023, this project"
-        " dives into my listening habits, tastes, and how they've evolved (or stayed the same!) over time."
-        " Each page presents interactive charts and data visualizations, offering"
-        " different perspectives and insights into my musical journey. Whether it's"
-        " exploring my top artists, albums, or how my music preferences have changed over"
-        " the years, this project invites you on a data-driven exploration of my life in music."
-        " It's a unique, personal view into the soundtrack of my life, expressed through the prism of data analysis."
+        f"""
+        # An Aural History - Cameron's Life in Music
+        Welcome to my personal exploration of music through the lens of data. This
+        project is a testament to my passion for music and data analysis, combining
+        my personal music listening data from Last.fm with Python-based data analysis
+        and visualizations. You can find my music profile here: https://www.last.fm/user/cgomez08.
         
-        "\n### Page Index"
+        ### Project Overview
+        Spanning 15 years of listening history from May 26, 2008 to May 3, 2023, this project
+        dives into my listening habits, tastes, and how they've evolved (or stayed the same!) over time.
+        Each page presents interactive charts and data visualizations, offering
+        different perspectives and insights into my musical journey. Whether it's
+        exploring my top artists, albums, or how my music preferences have changed over
+        the years, this project invites you on a data-driven exploration of my life in music.
+        It's a unique, personal view into the soundtrack of my life, expressed through the prism of data analysis.
+        
+        ### Page Index
+        Please use the navigation pane on the left side of the page to switch between pages. You can view the navigation pane by clicking
+        or tapping on the white arrow in the top left corner.
+        
+        ### Notes, Sources, and Acknowledgements
+        The original dates for my listening data run from ~2008 through 2023. However, I opened my Last.fm account and imported around 40k listens
+        from iTunes and my iPod - which led to those 40k tracks having corrupted dates (all listed as 1/1/1970). To remedy this issue, I changed
+        the dates of my listens from 2010-2012 by shifting them forward two years, and then repopulated those years with the corrupted listens. 
+        This solution worked for some of my charts, but not all of them (most visible on the heatmap, radial chart, and scatter plot). If I were
+        to do this over again, or if I do go back to my cleaning and data prepartion code again, I would include a step where I repopulate 2010-2012
+        in a way that mimics my average listening hours from the rest of the data, rather than uniformly assigning them across each day as they are currently.
+        
+        Background image credit: Clay Banks - {photo_credit}
+        Listening data csv download - https://benjaminbenben.com/lastfm-to-csv/
+        and special thanks to ChatGPT for cleaning up some of my code!
+        
+        """
     )
-    if st.button("Go to Top Artists, Albums, Tracks"):
-        switch_page("Top Artists, Albums, Tracks")
-    if st.button("Go to Scrobbles Over Time"):
-        switch_page("Scrobbles Over Time")
 if app_mode == "Top Artists, Albums, Tracks":
     add_bg_from_url(
     f"""

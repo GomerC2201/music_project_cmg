@@ -150,7 +150,7 @@ def add_bg_from_url_2(markdown_text):
         unsafe_allow_html=True
     )
 
-photo_credit = "https://unsplash.com/photos/fEVaiLwWvlU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+x = "https://unsplash.com/photos/fEVaiLwWvlU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
 # Create a multipage layout without having directory files
 st.sidebar.title("Navigation")
 app_mode = st.sidebar.selectbox("Choose the page:", ["About","Top Artists, Albums, Tracks", "Scrobbles Over Time", "3D Line Plot", "Heatmap and Radial Bar", "WordCloud", "Bar Chart Race", "Scatter Plot"])
@@ -184,8 +184,10 @@ if app_mode == "About":
         to do this over again, or if I do go back to my cleaning and data prepartion code again, I would include a step where I repopulate 2010-2012
         in a way that mimics my average listening hours from the rest of the data, rather than uniformly assigning them across each day as they are currently.
         
-        Background image credit: Clay Banks - {photo_credit}
+        Background image credit: Clay Banks - {x}
+        
         Listening data csv download - https://benjaminbenben.com/lastfm-to-csv/
+        
         and special thanks to ChatGPT for cleaning up some of my code!
         
         """

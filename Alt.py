@@ -188,6 +188,8 @@ if app_mode == "About":
         
         Listening data csv download - https://benjaminbenben.com/lastfm-to-csv/
         
+        Github repository - https://github.com/GomerC2201/music_project_cmg
+        
         and special thanks to ChatGPT for cleaning up some of my code!
         
         """
